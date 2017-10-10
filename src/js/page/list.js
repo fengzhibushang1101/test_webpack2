@@ -6,7 +6,7 @@ require('../../css/lib/reset.css');
 require('../../css/common/global.css');
 require('../../css/common/grid.css');
 require("../../css/common/index-list.css");
-require('../../css/page/list.less');
+require('../../css/page/list.css');
 
 import i_l from "../components/i-l"
 console.log(i_l);

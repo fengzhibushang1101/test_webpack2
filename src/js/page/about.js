@@ -5,7 +5,7 @@
 require('../../css/lib/reset.css');
 require('../../css/common/global.css');
 require('../../css/common/grid.css');
-require('../../css/page/about.less');
+require('../../css/page/about.css');
 import l from "../components/commjs"
 console.log(l);
 
