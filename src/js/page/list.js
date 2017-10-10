@@ -14,10 +14,6 @@ console.log(i_l);
 import l from "../components/commjs"
 console.log(l);
 
-
-let html = '';
-for(let i = 0; i < 5; i++){
-    html += '<li>列表' + (i + 1) + i_l + l + '</li>'
-}
-
+let list_length = 100;
+let html = Array.from({length: list_length}, (a, i)=>i).map(a=>`<li>列表${a+1}${i_l}${l}</li>`).join("");
 $('#list').html(html);
