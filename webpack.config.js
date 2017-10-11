@@ -1,7 +1,6 @@
 /**
  * Created by jyq on 2017/10/10.
  */
-const path = require('path');
 const webpack = require('webpack');
 /*
  extract-text-webpack-plugin插件，
@@ -15,18 +14,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const entry = require('./webpack.config/entry.config');
+const output = require('./webpack.config/output.config');
+
 module.exports = {
-    entry: { //配置入口文件，有几个写几个
-        index: './src/js/page/index.js',
-        list: './src/js/page/list.js',
-        about: './src/js/page/about.js',
-    },
-    output: {
-        path: path.join(__dirname, 'dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
-        publicPath: '../../dist/',       //模板、样式、脚本、图片等资源对应的server上的路径
-        filename: 'js/[name].js',     //每个页面对应的主js的生成配置
-        chunkFilename: 'js/[id].chunk.js'   //chunk生成的配置
-    },
+    entry: entry,
+    output: output,
     module: {
         loaders: [ //加载器，关于各个加载器的参数配置，可自行搜索之。
             {
