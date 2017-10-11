@@ -33,14 +33,6 @@ module.exports = {
                         },
                     }
                 ]),
-            }, {
-                test: /\.css$/,
-                include: /bootstrap/,
-                use: ExtractTextPlugin.extract([
-                    {
-                        loader: 'css-loader',
-                    },
-                ]),
             },{
                 test: /\.js$/,
                 exclude: /node_modules|vendor|bootstrap/,
@@ -49,13 +41,7 @@ module.exports = {
                     presets: [['es2015', { loose: true }]],
                     plugins: ["transform-runtime"]
                 }
-            }, {
-                test: /\.less$/,
-                //配置less的抽取器、加载器。中间!有必要解释一下，
-                //根据从右到左的顺序依次调用less、css加载器，前一个的输出是后一个的输入
-                //你也可以开发自己的loader哟。有关loader的写法可自行谷歌之。
-                loader: ExtractTextPlugin.extract('css-loader!less-loader')
-            }, {
+            },{
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract([
                     {
@@ -132,7 +118,6 @@ module.exports = {
                 collapseWhitespace: false //删除空白符与换行符
             }
         }),
-
         new webpack.HotModuleReplacementPlugin(), //热加载
         new webpack.optimize.UglifyJsPlugin({
             compress: {
